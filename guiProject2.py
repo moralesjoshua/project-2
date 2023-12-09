@@ -75,7 +75,7 @@ class Calculator:
         self.modulus_button = Button(self.frame, text='%', height=3, width=4, font=35, command=lambda: self.button_press('%'))
         self.modulus_button.grid(row=0, column=3)
 
-        self.square_root_button = Button(self.frame, text='√', height=3, width=4, font=35, command=lambda: self.square_root)
+        self.square_root_button = Button(self.frame, text='√', height=3, width=4, font=35, command=self.square_root)
         self.square_root_button.grid(row=0, column=1)
 
     def button_press(self, num: [int, float, str]) -> None:
@@ -111,11 +111,11 @@ class Calculator:
 
     def square_root(self):
         """
-        Evaluates square root
+        Evaluates square root in float
         """
         try:
             result = math.sqrt(float(self.equation_text))
-            self.equation_label.set('')
+            self.equation_label.set(result)
             self.equation_text = str(result)
         except ValueError:
             self.equation_label.set("error")
