@@ -72,7 +72,7 @@ class Calculator:
         self.modulus_button = Button(self.frame, text='%', height=3, width=4, font=35, command=lambda: self.button_press('%'))
         self.modulus_button.grid(row=0, column=3)
 
-        self.square_root_button = Button(self.frame, text='q', height=3, width=4, font=35, command=lambda: self.square_root)
+        self.square_root_button = Button(self.frame, text='√', height=3, width=4, font=35, command=lambda: self.square_root)
         self.square_root_button.grid(row=0, column=1)
 
     def button_press(self, num):
