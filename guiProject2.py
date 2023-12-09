@@ -3,6 +3,9 @@ import math
 
 
 class Calculator:
+    """
+    Initializes the class
+    """
     def __init__(self, window):
         self.window = window
 
@@ -75,11 +78,19 @@ class Calculator:
         self.square_root_button = Button(self.frame, text='√', height=3, width=4, font=35, command=lambda: self.square_root)
         self.square_root_button.grid(row=0, column=1)
 
-    def button_press(self, num):
+    def button_press(self, num: [int, float, str]) -> None:
+        """
+        Deals with the button pressed along with its associated value
+
+        Parameters: The number or operator that was pressed.
+        """
         self.equation_text = self.equation_text + str(num)
         self.equation_label.set(self.equation_text)
 
     def equal(self):
+        """
+        Evaluates the equation then updates the equation label
+        """
         try:
             total = str(eval(self.equation_text))
             self.equation_label.set(total)
@@ -92,10 +103,16 @@ class Calculator:
             self.equation_text = ""
 
     def clear(self):
+        """
+        Clears the label
+        """
         self.equation_label.set("")
         self.equation_text = ""
 
     def square_root(self):
+        """
+        Evaluates square root
+        """
         try:
             result = math.sqrt(float(self.equation_text))
             self.equation_label.set('')
