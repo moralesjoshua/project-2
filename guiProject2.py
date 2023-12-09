@@ -118,5 +118,5 @@ class Calculator:
             self.equation_label.set(result)
             self.equation_text = str(result)
         except ValueError:
-            self.equation_label.set("error")
+            self.equation_label.set("Error")
             self.equation_text = ""
